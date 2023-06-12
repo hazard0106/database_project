@@ -1,0 +1,43 @@
+﻿@page
+@using WebApplication1.Pages;
+@model PrivacyModel
+@{
+    ViewData["Title"] = "articles";
+  
+}
+<form method="POST" >
+
+    <label for="name">name:</label><br>
+    <input type="text" id="name" name="name"><br>
+   
+    <label for="price">price:</label><br>
+    <input type="text" id="price" name="price"><br>
+    
+        <label for="datetime">datetime:</label><br>
+        <input type="date" id="datetime" name="datetime"><br>
+   
+   
+
+
+    <input type="submit" value="Create article">
+</form>
+<table>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>datetime</th>
+       
+
+    </tr>
+    @foreach (var item in Model.listArticle)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.name</td>
+            <td>@item.price</td>
+            <td>@item.datetime</td>
+           
+        </tr>
+    }
+</table>

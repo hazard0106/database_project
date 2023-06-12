@@ -1,0 +1,47 @@
+﻿@page
+@model InvoiceModel
+@{
+    ViewData["Title"] = "Invoice";
+}
+<form method="POST">
+    <label for="customerid">customerid:</label><br>
+    <input type="text" id="customerid" name="customerid"><br>
+
+    <label for="articleid">articleid:</label><br>
+    <input type="text" id="articleid" name="articleid"><br>
+
+    <label for="datetime">datetime:</label><br>
+    <input type="date" id="datetime" name="datetime"><br>
+
+    <label for="price">price:</label><br>
+    <input type="text" id="price" name="price"><br>
+
+    <label for="paymentmethod">paymentmethod:</label><br>
+    <input type="text" id="paymentmethod" name="paymentmethod"><br>
+
+
+    <input type="submit" value="Create invoice">
+</form>
+<table>
+    <tr>
+        <th>id</th>
+        <th>customerid</th>
+        <th>articleid</th>
+        <th>datetime</th>
+        <th>price</th>
+        <th>paymentmethod</th>
+
+    </tr>
+    @foreach (var item in Model.listInvoice)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.customerid</td>
+            <td>@item.articleid</td>
+            <td>@item.datetime</td>
+            <td>@item.price</td>
+            <td>@item.paymentmethod</td>
+
+        </tr>
+
+    }
